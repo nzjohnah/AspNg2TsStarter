@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="AspNg2TsStarter" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Angular 2, TypeScript and Boostrap with ASP.NET Core 1.0 - Starter Project</title>
+    <link href="libs/css/bootstrap.css" rel="stylesheet" />
+    <base href="/" />
+    <!-- 1. Load libraries -->
+    <script src="libs/es6-shim.min.js"></script>
+    <script src="libs/system-polyfills.js"></script>
+    <script src="libs/shims_for_IE.js"></script>
+    <script src="libs/angular2-polyfills.js"></script>
+    <script src="libs/system.js"></script>
+    <script src="libs/rx.js"></script>
+    <script src="libs/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                appScripts: {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+    </script>
+    <script>
+
+        System.import('appScripts/boot')
+              .then(null, console.error.bind(console));
+    </script>
+
+</head>
+<body>
+    <h2>Angular 2, TypeScript and Boostrap with ASP.NET Core 1.0 - Starter Project</h2>
+    <app>Loading...</app>
+</body>
+</html>
