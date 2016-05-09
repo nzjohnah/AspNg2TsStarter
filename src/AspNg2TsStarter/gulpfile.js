@@ -1,5 +1,7 @@
-﻿/// <binding AfterBuild='moveModulesToLibs' />
+﻿/// <binding AfterBuild='default' />
+
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 
 gulp.task('moveModulesToLibs', function (done) {
     gulp.src([
@@ -20,3 +22,17 @@ gulp.task('moveModulesToLibs', function (done) {
       'node_modules/bootstrap/dist/css/bootstrap.css'
     ]).pipe(gulp.dest('./wwwroot/libs/css'));
 });
+
+gulp.task('compileStyles', function () {
+    gulp.src([
+        'scripts/styles/*.scss'
+    ]).pipe(sass())
+         .pipe(gulp.dest('./wwwroot/app/styles'));
+});
+
+gulp.task('moveComponents', function () {
+    gulp.src([
+        'scripts/dashboard/*'
+    ]).pipe(gulp.dest('./wwwroot/app/dashboard'));
+});
+gulp.task('default', ['moveModulesToLibs', 'compileStyles', 'moveComponents']);

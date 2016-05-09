@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>Angular 2, TypeScript and Boostrap with ASP.NET Core 1.0 - Starter Project</title>
     <link href="libs/css/bootstrap.css" rel="stylesheet" />
+
     <base href="/" />
     <!-- 1. Load libraries -->
     <script src="libs/es6-shim.min.js"></script>
@@ -21,7 +22,8 @@
     <script>
         System.config({
             packages: {
-                appScripts: {
+                app: {
+                    //format: 'register',
                     defaultExtension: 'js'
                 }
             }
@@ -29,7 +31,7 @@
     </script>
     <script>
 
-        System.import('appScripts/boot')
+        System.import('app/boot')
               .then(null, console.error.bind(console));
     </script>
 
