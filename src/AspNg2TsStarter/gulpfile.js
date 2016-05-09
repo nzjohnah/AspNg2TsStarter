@@ -25,14 +25,17 @@ gulp.task('moveModulesToLibs', function (done) {
 
 gulp.task('compileStyles', function () {
     gulp.src([
-        'scripts/styles/*.scss'
+        'styles/*.scss'
     ]).pipe(sass())
          .pipe(gulp.dest('./wwwroot/app/styles'));
 });
 
 gulp.task('moveComponents', function () {
     gulp.src([
-        'scripts/dashboard/*'
-    ]).pipe(gulp.dest('./wwwroot/app/dashboard'));
+        'scripts/*/*.*', '!scripts/*.ts', '!scripts/*/*.ts'
+    ]).pipe(gulp.dest('./wwwroot/app/'));
 });
+
 gulp.task('default', ['moveModulesToLibs', 'compileStyles', 'moveComponents']);
+
+// TODO: Gulp clean
